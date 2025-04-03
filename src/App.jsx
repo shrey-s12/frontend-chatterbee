@@ -15,13 +15,9 @@ import { Toaster } from "react-hot-toast"
 function App() {
   const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
 
-  console.log("Online Users", onlineUsers);
-
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
-
-  console.log("authUser", authUser);
 
   if (isCheckingAuth && !authUser) return (
     <div className="flex justify-center items-center h-screen">
